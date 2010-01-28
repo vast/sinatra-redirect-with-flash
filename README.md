@@ -5,11 +5,11 @@ Shortly: sinatra-redirect-with-flash provides `redirect` helper that can set pro
 
 In fact, every time you set a flash parameter the very next step is often to perform your redirect:
 
-   post '/posts/?' do
-     @post = Post.new(params)
-     flash[:notice] = 'The post was successfully created'
-     redirect "/posts/#{@post.id}"
-   end
+    post '/posts/?' do
+      @post = Post.new(params)
+      flash[:notice] = 'The post was successfully created'
+      redirect "/posts/#{@post.id}"
+    end
 
 With sinatra-redirect-with-flash you can do one-line redirects. For instance, to rewrite the above example:
 
