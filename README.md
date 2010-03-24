@@ -22,7 +22,6 @@ With sinatra-redirect-with-flash you can do one-line redirects. For instance, to
     require 'rubygems'
     require 'sinatra'
     require 'rack-flash'
-    gem 'sinatra-redirect-with-flash'
     require 'sinatra/redirect_with_flash'
 
     use Rack::Flash
