@@ -18,6 +18,10 @@ With sinatra-redirect-with-flash you can do one-line redirects. For instance, to
       redirect "/posts/#{@post.id}", :notice => 'The post was successfully created'
     end
 
+##Installation
+
+    sudo gem install sinatra-redirect-with-flash -s http://gemcutter.org/
+
 ##Example
     require 'rubygems'
     require 'sinatra'
