@@ -8,14 +8,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "sinatra-redirect-with-flash"
-    gemspec.version = "0.1.1"
+    gemspec.version = "0.1.2"
     gemspec.summary = gemspec.description = "redirect with flash helper for Sinatra"
     gemspec.email = "vasily@polovnyov.ru"
     gemspec.homepage = "http://github.com/vast/sinatra-redirect-with-flash"
     gemspec.authors = ["Vasily Polovnyov"]
 
     gemspec.add_dependency 'sinatra', '>=0.9.1'
-    gemspec.add_dependency 'rack', '>=0.9.1'
     gemspec.add_dependency 'rack-flash', '>=0.1.1'
 
     gemspec.add_development_dependency 'rack-test', '>=0.3.0'
