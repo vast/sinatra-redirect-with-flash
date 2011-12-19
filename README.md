@@ -57,7 +57,8 @@ Otherwise install the gem as usual:
       redirect '/posts/', :flash => {:my_msg => 'Moving on!'}      
     end
 
-*Note* that if your application subclasses Sinatra::Base (modular app), you have to register the extension in your subclass:
+*Note* that if your application subclasses `Sinatra::Base` (modular app),
+you have to register the extension in your subclass:
 
     helpers Sinatra::RedirectWithFlash
 
