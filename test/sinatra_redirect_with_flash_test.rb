@@ -1,7 +1,7 @@
+require 'rubygems'
+require 'rack/test'
 require 'sinatra_app'
 require 'test/unit'
-require 'rack/test'
-require 'rack/flash/test'
 
 set :environment, :test
 
@@ -13,7 +13,7 @@ class SinatraRedirectWithFlashTest < Test::Unit::TestCase
   end
 
   def flash
-    last_request.env['x-rack.flash']
+    last_request.env['x-rack.flash'] || last_request.env['rack.session']['flash']
   end
 
   def test_redirect_with_custom_flash_opts
@@ -23,7 +23,7 @@ class SinatraRedirectWithFlashTest < Test::Unit::TestCase
   end
 
   def test_common_flash_names
-    [:notice, :error, :warning, :alert].each do |k|
+    Sinatra::RedirectWithFlash::COMMON_FLASH_NAMES.each do |k|
       get "/#{k.to_s}"
       assert_not_nil flash
       assert_equal "sample #{k.to_s}", flash[k]
@@ -37,21 +37,21 @@ class SinatraRedirectWithFlashTest < Test::Unit::TestCase
 
     assert_equal last_response.status, 301
     assert_equal last_response.body, ''
-    assert_equal last_response.headers['Location'], '/fff'
+    assert last_response.headers['Location'] =~ /\/fff$/
   end
 
   def test_old_school_redirect
     get '/old-school-redirect'
     assert_equal last_response.status, 302
     assert_equal last_response.body, ''
-    assert_equal last_response.headers['Location'], '/aaa'
+    assert last_response.headers['Location'] =~ /\/aaa$/
   end
 
   def test_old_school_redirect_with_code
     get '/old-school-redirect-with-code'
     assert_equal last_response.status, 301
     assert_equal last_response.body, ''
-    assert_equal last_response.headers['Location'], '/aaa'
+    assert last_response.headers['Location'] =~ /\/aaa$/
   end
 
 end

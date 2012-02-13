@@ -1,15 +1,15 @@
 require 'rubygems'
 require 'sinatra'
-require 'rack-flash'
+require 'sinatra/flash'
 require 'lib/sinatra/redirect_with_flash'
 
-use Rack::Flash
+enable :sessions
 
 get '/' do
   redirect '/fff', :flash => {:info => 'sample info'}
 end
 
-[:notice, :error, :warning, :alert].each do |k|
+Sinatra::RedirectWithFlash::COMMON_FLASH_NAMES.each do |k|
   get "/#{k.to_s}" do
     redirect '/fff', k => "sample #{k.to_s}"
   end

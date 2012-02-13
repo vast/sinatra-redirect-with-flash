@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 module Sinatra
   module RedirectWithFlash
-    COMMON_FLASH_NAMES = [:notice, :alert, :warning, :error, :info]
+    COMMON_FLASH_NAMES = [:notice, :alert, :warning, :error, :info, :success]
     
     def redirect(uri, *args)
       flash_opts = args.last
