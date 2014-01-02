@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/flash'
-require 'lib/sinatra/redirect_with_flash'
+require './lib/sinatra/redirect_with_flash'
 
 enable :sessions
 
