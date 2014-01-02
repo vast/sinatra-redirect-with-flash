@@ -1,7 +1,7 @@
 #Sinatra Extension: redirect with flash
 
 Shortly: sinatra-redirect-with-flash provides `redirect` helper that can
-set proper flash (rack-flash or sinatra-flash) before the redirection.
+set proper flash (rack-flash3 or sinatra-flash) before the redirection.
 
 In fact, every time you set a flash parameter the very next step is often to
 perform your redirect:
@@ -32,7 +32,7 @@ If you use [bundler](http://gembundler.com/), simply specify
 in your project's root:
 
 ```ruby
-gem 'sinatra-flash' # or `gem 'rack-flash'`
+gem 'rack-flash3'
 gem 'sinatra-redirect-with-flash'
 ```
 
@@ -50,7 +50,7 @@ Otherwise install the gem as usual:
 ```ruby
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/flash' # or `require 'rack-flash'`
+require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 
 enable :sessions
@@ -79,5 +79,5 @@ helpers Sinatra::RedirectWithFlash
 
 ##Requirements
 
-Either [rack-flash](http://nakajima.github.com/rack-flash/) or
+Either [rack-flash3](https://github.com/treeder/rack-flash) or
 [sinatra-flash](https://github.com/SFEley/sinatra-flash).
