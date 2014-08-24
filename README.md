@@ -20,7 +20,7 @@ to rewrite the above example:
 ```ruby
 post '/posts/?' do
   @post = Post.create(params)
-  redirect "/posts/#{@post.id}", :notice => 'The post was successfully created'
+  redirect "/posts/#{@post.id}", notice: 'The post was successfully created'
 end
 ```
 
@@ -56,16 +56,16 @@ require 'sinatra/redirect_with_flash'
 enable :sessions
 
 post '/sessions/new' do
-  redirect '/secret', :notice => 'Logged in'
+  redirect '/secret', notice: 'Logged in'
   # predefined keys are: :notice, :error, :warning, :alert, :info, :success
 end
 
 get '/foo' do
-  redirect '/bar', 301, :notice => 'redirect with 301 code'
+  redirect '/bar', 301, notice: 'redirect with 301 code'
 end
 
 get '/archive' do
-  redirect '/posts/', :flash => {:my_msg => 'Moving on!'}      
+  redirect '/posts/', flash: { my_msg: 'Moving on!' }      
 end
 ```
 
