@@ -1,6 +1,8 @@
-#Sinatra Extension: redirect with flash
+# Sinatra Extension: redirect with flash
 
-Shortly: sinatra-redirect-with-flash provides `redirect` helper that can
+[![Build Status](https://semaphoreapp.com/api/v1/projects/73a347a9-574a-4bc0-804a-eb4211230ce6/235551/badge.png)](https://semaphoreapp.com/vast/sinatra-redirect-with-flash)
+
+sinatra-redirect-with-flash provides `redirect` helper that can
 set proper flash (rack-flash3 or sinatra-flash) before the redirection.
 
 In fact, every time you set a flash parameter the very next step is often to
